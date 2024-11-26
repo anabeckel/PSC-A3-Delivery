@@ -1,13 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// Demais classes permanecem iguais...
-
 public class Delivery {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Cadastro de Restaurantes fixos
+        // Cadastro de Restaurantes
         Restaurante restaurante1 = new Restaurante("Restaurante Italiano", "italiano@gmail.com", "Comida Italiana");
         restaurante1.adicionarEndereco(new Endereco("Rua B", 200, "Porto Alegre", "90100-000"));
         restaurante1.adicionarTelefone(new Telefone("51", "988888888"));
@@ -34,7 +32,7 @@ public class Delivery {
             System.out.println("=======================================================");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpa o buffer do teclado
+            scanner.nextLine(); 
 
             switch (opcao) {
                 case 1: // Cadastrar Cliente
@@ -52,7 +50,7 @@ public class Delivery {
                     String ruaCliente = scanner.nextLine();
                     System.out.print("Digite o número do endereço: ");
                     int numeroCliente = scanner.nextInt();
-                    scanner.nextLine(); // Limpa o buffer
+                    scanner.nextLine(); 
                     System.out.print("Digite a cidade: ");
                     String cidadeCliente = scanner.nextLine();
                     System.out.print("Digite o CEP: ");
@@ -84,7 +82,7 @@ public class Delivery {
 
                     System.out.print("Escolha um restaurante pelo número: ");
                     int escolhaRestaurante = scanner.nextInt();
-                    scanner.nextLine(); // Limpa o buffer
+                    scanner.nextLine(); 
 
                     if (escolhaRestaurante < 1 || escolhaRestaurante > restaurantes.size()) {
                         System.out.println("Restaurante inválido!");
@@ -103,12 +101,12 @@ public class Delivery {
 
                     System.out.print("Quantos itens deseja adicionar ao pedido? ");
                     int numItens = scanner.nextInt();
-                    scanner.nextLine(); // Limpa o buffer
+                    scanner.nextLine();
 
                     for (int i = 0; i < numItens; i++) {
                         System.out.print("Escolha o número do alimento: ");
                         int escolhaAlimento = scanner.nextInt();
-                        scanner.nextLine(); // Limpa o buffer
+                        scanner.nextLine();
 
                         if (escolhaAlimento < 1 || escolhaAlimento > restauranteEscolhido.getListaAlimentos().size()) {
                             System.out.println("Alimento inválido!");
@@ -120,7 +118,7 @@ public class Delivery {
 
                         System.out.print("Digite a quantidade desejada: ");
                         int quantidade = scanner.nextInt();
-                        scanner.nextLine(); // Limpa o buffer
+                        scanner.nextLine();
 
                         ItemPedido itemPedido = new ItemPedido(quantidade, alimentoEscolhido);
                         pedido.adicionarItem(itemPedido);
